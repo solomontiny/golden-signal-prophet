@@ -355,7 +355,14 @@ const Index = () => {
           <div className="font-medium mb-2">EA setup</div>
           <ol className="text-muted-foreground space-y-1.5 list-decimal pl-5">
             <li>
-              Download the starter EA <code className="text-foreground">XauusdSignalBridge.mq5</code> from the project files.
+              <a
+                href="/XauusdSignalBridge.mq5"
+                download
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                Download the starter EA (XauusdSignalBridge.mq5)
+              </a>{" "}
+              and copy it to <code className="text-foreground">MQL5/Experts/</code> in your MT5 data folder.
             </li>
             <li>
               In MT5: <span className="text-foreground">Tools → Options → Expert Advisors</span>, tick{" "}
