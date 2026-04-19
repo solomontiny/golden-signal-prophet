@@ -14,7 +14,110 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      signals: {
+        Row: {
+          confidence: number | null
+          created_at: string
+          entry_price: number
+          id: string
+          notes: string | null
+          side: string
+          signal_time: string
+          status: string
+          stop_loss: number | null
+          strategy: string | null
+          symbol: string
+          take_profit: number | null
+          ticket: number | null
+        }
+        Insert: {
+          confidence?: number | null
+          created_at?: string
+          entry_price: number
+          id?: string
+          notes?: string | null
+          side: string
+          signal_time?: string
+          status?: string
+          stop_loss?: number | null
+          strategy?: string | null
+          symbol?: string
+          take_profit?: number | null
+          ticket?: number | null
+        }
+        Update: {
+          confidence?: number | null
+          created_at?: string
+          entry_price?: number
+          id?: string
+          notes?: string | null
+          side?: string
+          signal_time?: string
+          status?: string
+          stop_loss?: number | null
+          strategy?: string | null
+          symbol?: string
+          take_profit?: number | null
+          ticket?: number | null
+        }
+        Relationships: []
+      }
+      trades: {
+        Row: {
+          closed_at: string
+          created_at: string
+          entry_price: number
+          exit_price: number
+          id: string
+          outcome: string
+          pips: number | null
+          profit: number | null
+          r_multiple: number | null
+          side: string
+          signal_id: string | null
+          symbol: string
+          ticket: number | null
+        }
+        Insert: {
+          closed_at?: string
+          created_at?: string
+          entry_price: number
+          exit_price: number
+          id?: string
+          outcome: string
+          pips?: number | null
+          profit?: number | null
+          r_multiple?: number | null
+          side: string
+          signal_id?: string | null
+          symbol?: string
+          ticket?: number | null
+        }
+        Update: {
+          closed_at?: string
+          created_at?: string
+          entry_price?: number
+          exit_price?: number
+          id?: string
+          outcome?: string
+          pips?: number | null
+          profit?: number | null
+          r_multiple?: number | null
+          side?: string
+          signal_id?: string | null
+          symbol?: string
+          ticket?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trades_signal_id_fkey"
+            columns: ["signal_id"]
+            isOneToOne: false
+            referencedRelation: "signals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
