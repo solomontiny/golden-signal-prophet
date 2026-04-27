@@ -2,81 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Trading-terminal design system. All colors in HSL. */
+/* Meridian Health — clean clinical design system. All colors HSL. */
 
 @layer base {
   :root {
-    /* Near-black trading terminal */
-    --background: 220 25% 6%;
-    --foreground: 45 30% 92%;
+    --background: 210 40% 99%;
+    --foreground: 215 35% 15%;
 
-    --card: 220 22% 9%;
-    --card-foreground: 45 30% 92%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
 
-    --popover: 220 24% 8%;
-    --popover-foreground: 45 30% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
 
-    /* Gold primary (XAU) */
-    --primary: 43 90% 56%;
-    --primary-foreground: 220 30% 8%;
-    --primary-glow: 45 95% 64%;
+    /* Calm medical teal-blue */
+    --primary: 200 85% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 195 85% 55%;
 
-    --secondary: 220 18% 14%;
-    --secondary-foreground: 45 25% 88%;
+    --secondary: 200 30% 95%;
+    --secondary-foreground: 200 60% 25%;
 
-    --muted: 220 18% 12%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 220 20% 15%;
-    --accent-foreground: 45 30% 92%;
+    --accent: 165 60% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 142 70% 45%;
+    --success: 145 60% 42%;
     --success-foreground: 0 0% 100%;
 
-    --border: 220 18% 16%;
-    --input: 220 18% 14%;
-    --ring: 43 90% 56%;
+    --border: 210 25% 90%;
+    --input: 210 25% 90%;
+    --ring: 200 85% 38%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --gradient-gold: linear-gradient(135deg, hsl(43 90% 56%), hsl(38 95% 50%));
-    --gradient-panel: linear-gradient(180deg, hsl(220 22% 10%), hsl(220 24% 7%));
-    --shadow-gold: 0 0 32px -8px hsl(43 90% 56% / 0.45);
-    --shadow-panel: 0 8px 32px -12px hsl(0 0% 0% / 0.6);
+    --gradient-hero: linear-gradient(135deg, hsl(200 85% 38%), hsl(195 85% 55%));
+    --gradient-soft: linear-gradient(180deg, hsl(200 60% 97%), hsl(0 0% 100%));
+    --gradient-accent: linear-gradient(135deg, hsl(165 60% 45%), hsl(180 65% 50%));
 
-    --sidebar-background: 220 25% 6%;
-    --sidebar-foreground: 45 25% 88%;
-    --sidebar-primary: 43 90% 56%;
-    --sidebar-primary-foreground: 220 30% 8%;
-    --sidebar-accent: 220 18% 14%;
-    --sidebar-accent-foreground: 45 25% 88%;
-    --sidebar-border: 220 18% 16%;
-    --sidebar-ring: 43 90% 56%;
+    --shadow-soft: 0 4px 24px -8px hsl(200 60% 30% / 0.12);
+    --shadow-card: 0 8px 32px -12px hsl(200 60% 30% / 0.15);
+    --shadow-glow: 0 0 48px -12px hsl(200 85% 55% / 0.45);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 35% 15%;
+    --sidebar-primary: 200 85% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 30% 95%;
+    --sidebar-accent-foreground: 200 60% 25%;
+    --sidebar-border: 210 25% 90%;
+    --sidebar-ring: 200 85% 38%;
   }
 
   .dark {
-    --background: 220 25% 6%;
-    --foreground: 45 30% 92%;
-    --card: 220 22% 9%;
-    --card-foreground: 45 30% 92%;
-    --popover: 220 24% 8%;
-    --popover-foreground: 45 30% 92%;
-    --primary: 43 90% 56%;
-    --primary-foreground: 220 30% 8%;
-    --secondary: 220 18% 14%;
-    --secondary-foreground: 45 25% 88%;
-    --muted: 220 18% 12%;
-    --muted-foreground: 220 10% 60%;
-    --accent: 220 20% 15%;
-    --accent-foreground: 45 30% 92%;
-    --destructive: 0 75% 55%;
+    --background: 215 40% 8%;
+    --foreground: 210 30% 95%;
+    --card: 215 35% 11%;
+    --card-foreground: 210 30% 95%;
+    --popover: 215 35% 11%;
+    --popover-foreground: 210 30% 95%;
+    --primary: 195 85% 55%;
+    --primary-foreground: 215 40% 8%;
+    --secondary: 215 30% 16%;
+    --secondary-foreground: 210 30% 95%;
+    --muted: 215 30% 14%;
+    --muted-foreground: 215 15% 65%;
+    --accent: 165 60% 50%;
+    --accent-foreground: 215 40% 8%;
+    --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 18% 16%;
-    --input: 220 18% 14%;
-    --ring: 43 90% 56%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 195 85% 55%;
   }
 }
 
@@ -86,53 +88,59 @@
   }
 
   html {
-    @apply dark;
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "ss01", "cv11";
-    background-image:
-      radial-gradient(circle at 20% 0%, hsl(43 90% 56% / 0.06), transparent 40%),
-      radial-gradient(circle at 80% 100%, hsl(43 90% 56% / 0.04), transparent 40%);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    @apply tracking-tight;
   }
 }
 
 @layer utilities {
-  .font-mono-tabular {
-    font-variant-numeric: tabular-nums;
-    font-family: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
+  .bg-hero {
+    background: var(--gradient-hero);
   }
-  .text-success {
-    color: hsl(var(--success));
+  .bg-soft {
+    background: var(--gradient-soft);
   }
-  .text-bull {
-    color: hsl(var(--success));
+  .bg-accent-gradient {
+    background: var(--gradient-accent);
   }
-  .text-bear {
-    color: hsl(var(--destructive));
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
-  .bg-panel {
-    background: var(--gradient-panel);
+  .shadow-card {
+    box-shadow: var(--shadow-card);
   }
-  .shadow-panel {
-    box-shadow: var(--shadow-panel);
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
   }
-  .gold-glow {
-    box-shadow: var(--shadow-gold);
-  }
-  .text-gold {
-    background: var(--gradient-gold);
+  .text-gradient {
+    background: var(--gradient-hero);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  @keyframes pulse-ring {
-    0% { box-shadow: 0 0 0 0 hsl(43 90% 56% / 0.6); }
-    100% { box-shadow: 0 0 0 12px hsl(43 90% 56% / 0); }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
-  .animate-pulse-ring {
-    animation: pulse-ring 1.6s ease-out infinite;
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.7s ease-out both;
   }
 }
