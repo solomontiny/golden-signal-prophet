@@ -30,9 +30,9 @@ const Contact = () => {
       <section className="container py-14 grid lg:grid-cols-[1fr_1.2fr] gap-10">
         <div className="space-y-5">
           {[
-            { icon: MapPin, label: "Office", value: "Doha, Qatar — serving all GCC countries" },
-            { icon: Phone, label: "Phone", value: "+974 0000 0000" },
-            { icon: Mail, label: "Email", value: "info@gulfnurses.qa" },
+            { icon: MapPin, label: "Office", value: "448 Al Sarj Street, Fereej Al Murra, Zone 55, Doha, Qatar" },
+            { icon: Phone, label: "Phone", value: "+974 7202 1636" },
+            { icon: Mail, label: "Email", value: "info@serenitynursing.qa" },
             { icon: Clock, label: "Hours", value: "Sun – Thu · 9:00 AM – 6:00 PM (GST)" },
           ].map((i) => (
             <div key={i.label} className="flex gap-4 bg-card rounded-2xl p-5 border border-border">

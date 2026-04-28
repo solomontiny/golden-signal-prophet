@@ -15,7 +15,7 @@ const About = () => (
       <div>
         <h2 className="font-serif text-3xl font-bold">Who we are</h2>
         <p className="mt-4 text-muted-foreground leading-relaxed">
-          Gulf Nurses is a licensed recruitment and training agency headquartered in Qatar. Since our founding, we have built
+          Serenity International Nursing Recruitment is a licensed recruitment and training agency headquartered in Doha, Qatar. Since our founding, we have built
           strong relationships with hospitals, polyclinics and long-term care facilities across Qatar, the UAE, Saudi Arabia,
           Kuwait, Bahrain and Oman.
         </p>
@@ -53,10 +53,15 @@ const About = () => (
     </section>
 
     <section className="container py-16 grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
-      <img src={portrait} alt="Senior nurse representative" loading="lazy" className="rounded-3xl shadow-card w-full object-cover" />
+      <img src={portrait} alt="Segun Aboaba, CEO" loading="lazy" className="rounded-3xl shadow-card w-full object-cover" />
       <div>
         <span className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Leadership</span>
-        <h2 className="mt-3 font-serif text-3xl font-bold">A team that speaks your language — medically and culturally</h2>
+        <h2 className="mt-3 font-serif text-3xl font-bold">Segun Aboaba — Chief Executive Officer</h2>
+        <p className="mt-4 text-muted-foreground leading-relaxed">
+          Under the leadership of CEO Segun Aboaba, Serenity International has grown into a trusted partner for hospitals and
+          nurses across the Gulf. His vision centres on candidate care, transparent processes, and long-term relationships with
+          healthcare providers.
+        </p>
         <p className="mt-4 text-muted-foreground leading-relaxed">
           Our consultants include former senior nurses, HR specialists, and migration advisors. We understand both the clinical
           demands of your next role and the practical realities of relocating to a new country.

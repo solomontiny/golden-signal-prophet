@@ -78,7 +78,7 @@ const Apply = () => {
           </div>
           <div className="bg-card rounded-3xl p-8 border border-border">
             <h4 className="font-serif text-lg font-semibold">Prefer to email?</h4>
-            <p className="mt-2 text-sm text-muted-foreground">Send your CV directly to <a href="mailto:careers@gulfnurses.qa" className="text-primary font-medium">careers@gulfnurses.qa</a> — we respond to every application.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Send your CV directly to <a href="mailto:careers@serenitynursing.qa" className="text-primary font-medium">careers@serenitynursing.qa</a> — we respond to every application.</p>
           </div>
         </aside>
       </section>
