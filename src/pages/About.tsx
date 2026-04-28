@@ -1,7 +1,7 @@
 import { CheckCircle2, Target, Heart, Compass } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import img from "@/assets/nurses-training.jpg";
-import portrait from "@/assets/visa-docs.jpg";
+import portrait from "@/assets/ceo-segun-aboaba.jpg";
 
 const About = () => (
   <>
