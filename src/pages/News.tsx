@@ -2,10 +2,10 @@ import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 
 const items = [
-  { date: "15 May 2026", city: "Doha, Qatar", title: "Gulf Nurses Career Fair 2026", desc: "Meet recruiters from 20+ hospitals across the GCC. Free entry for licensed nurses.", tag: "Event" },
+  { date: "15 May 2026", city: "Doha, Qatar", title: "Serenity International Career Fair 2026", desc: "Meet recruiters from 20+ hospitals across the GCC. Free entry for licensed nurses.", tag: "Event" },
   { date: "02 May 2026", city: "Online", title: "DataFlow & Prometric Q&A Webinar", desc: "Everything you need to know about credential verification for GCC licensure.", tag: "Webinar" },
   { date: "20 Apr 2026", city: "Manila, PH", title: "Philippines Recruitment Drive", desc: "Face-to-face interviews for ICU and ER nurses headed to Qatar and UAE.", tag: "Recruitment" },
-  { date: "08 Apr 2026", city: "Press", title: "Gulf Nurses partners with Bahrain polyclinic network", desc: "A new partnership opens up 80+ nursing positions across Bahrain in 2026.", tag: "News" },
+  { date: "08 Apr 2026", city: "Press", title: "Serenity International partners with Bahrain polyclinic network", desc: "A new partnership opens up 80+ nursing positions across Bahrain in 2026.", tag: "News" },
   { date: "25 Mar 2026", city: "Kochi, IN", title: "India Career Expo — South Region", desc: "Screening and counselling for Indian nurses interested in GCC placements.", tag: "Recruitment" },
   { date: "10 Mar 2026", city: "Online", title: "IELTS / OET Masterclass", desc: "Free 90-minute session covering top tips from our top language trainers.", tag: "Webinar" },
 ];
@@ -14,7 +14,7 @@ const News = () => (
   <>
     <PageHeader
       eyebrow="News & Events"
-      title="What's happening at Gulf Nurses"
+      title="What's happening at Serenity International"
       subtitle="Career fairs, webinars, partnership announcements and industry updates — stay in the loop."
     />
     <section className="container py-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">

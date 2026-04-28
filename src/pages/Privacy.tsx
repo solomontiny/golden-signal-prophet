@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader";
 const sections = [
   {
     h: "1. Who we are",
-    p: "Gulf Nurses is a licensed nursing recruitment and training agency based in Doha, Qatar, serving hospitals and candidates across the GCC region.",
+    p: "Serenity International is a licensed nursing recruitment and training agency based in Doha, Qatar, serving hospitals and candidates across the GCC region.",
   },
   {
     h: "2. Information we collect",
@@ -23,7 +23,7 @@ const sections = [
   },
   {
     h: "6. Your rights",
-    p: "You have the right to access, correct, update or delete your personal information, and to withdraw consent to further processing. To exercise these rights, email info@gulfnurses.qa.",
+    p: "You have the right to access, correct, update or delete your personal information, and to withdraw consent to further processing. To exercise these rights, email info@serenitynursing.qa.",
   },
   {
     h: "7. Security",
@@ -39,7 +39,7 @@ const sections = [
   },
   {
     h: "10. Contact",
-    p: "Questions about this policy? Email info@gulfnurses.qa or write to our Doha office.",
+    p: "Questions about this policy? Email info@serenitynursing.qa or write to our Doha office.",
   },
 ];
 
@@ -48,7 +48,7 @@ const Privacy = () => (
     <PageHeader
       eyebrow="Legal"
       title="Privacy Policy"
-      subtitle="Last updated: 28 April 2026. This policy explains how Gulf Nurses collects, uses and protects your information."
+      subtitle="Last updated: 28 April 2026. This policy explains how Serenity International collects, uses and protects your information."
     />
     <section className="container py-14 max-w-3xl">
       <div className="prose prose-neutral max-w-none">
