@@ -1,7 +1,7 @@
 import { CheckCircle2, Target, Heart, Compass } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 import img from "@/assets/nurses-training.jpg";
-import portrait from "@/assets/visa-docs.jpg";
+import portrait from "@/assets/ceo-segun-aboaba.jpg";
 
 const About = () => (
   <>
@@ -53,7 +53,7 @@ const About = () => (
     </section>
 
     <section className="container py-16 grid lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
-      <img src={portrait} alt="Segun Aboaba, CEO" loading="lazy" className="rounded-3xl shadow-card w-full object-cover" />
+      <img src={portrait} alt="Segun Aboaba, CEO of Serenity International Nursing Recruitment" loading="lazy" className="rounded-3xl shadow-card w-full object-cover aspect-[4/5]" />
       <div>
         <span className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Leadership</span>
         <h2 className="mt-3 font-serif text-3xl font-bold">Segun Aboaba — Chief Executive Officer</h2>
