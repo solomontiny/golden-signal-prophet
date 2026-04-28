@@ -1,7 +1,8 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Stethoscope } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -38,8 +39,8 @@ const Layout = () => {
       <div className="hidden md:block bg-primary text-primary-foreground text-xs">
         <div className="container flex justify-between items-center h-9">
           <div className="flex items-center gap-5">
-            <span className="flex items-center gap-1.5"><Phone className="h-3 w-3" /> +974 0000 0000</span>
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> info@gulfnurses.qa</span>
+            <span className="flex items-center gap-1.5"><Phone className="h-3 w-3" /> +974 7202 1636</span>
+            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> info@serenitynursing.qa</span>
           </div>
           <div className="flex items-center gap-1.5">
             <MapPin className="h-3 w-3" /> Doha, Qatar — Serving the GCC
@@ -55,12 +56,10 @@ const Layout = () => {
       >
         <div className="container flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-hero grid place-items-center shadow-glow group-hover:scale-105 transition-transform">
-              <Stethoscope className="h-5 w-5 text-primary-foreground" />
-            </div>
+            <img src={logo} alt="Serenity International Nursing Recruitment logo" className="w-11 h-11 rounded-xl object-cover shadow-glow group-hover:scale-105 transition-transform bg-white" />
             <div className="leading-tight">
-              <div className="font-serif text-lg font-bold tracking-tight">Gulf Nurses</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Recruitment & Training</div>
+              <div className="font-serif text-base md:text-lg font-bold tracking-tight">Serenity International</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Nursing Recruitment</div>
             </div>
           </Link>
 
@@ -131,10 +130,8 @@ const Layout = () => {
         <div className="container py-14 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-hero grid place-items-center">
-                <Stethoscope className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <div className="font-serif text-xl font-bold text-background">Gulf Nurses</div>
+              <img src={logo} alt="Serenity International Nursing Recruitment logo" className="w-11 h-11 rounded-xl object-cover bg-white" />
+              <div className="font-serif text-lg font-bold text-background leading-tight">Serenity International<br /><span className="text-xs font-normal text-background/70">Nursing Recruitment</span></div>
             </div>
             <p className="text-sm text-background/70 leading-relaxed">
               Trusted nursing recruitment and training partner — placing qualified nurses across Qatar and the GCC for over 3 years.
@@ -172,15 +169,15 @@ const Layout = () => {
           <div>
             <h4 className="font-serif text-base text-background mb-4">Get in Touch</h4>
             <ul className="space-y-3 text-sm text-background/70">
-              <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary" /> Doha, Qatar — serving all GCC</li>
-              <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> +974 0000 0000</li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> info@gulfnurses.qa</li>
+              <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" /> 448 Al Sarj Street, Fereej Al Murra, Zone 55, Doha, Qatar</li>
+              <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> +974 7202 1636</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> info@serenitynursing.qa</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-background/10">
           <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-background/60">
-            <p>© {new Date().getFullYear()} Gulf Nurses Recruitment & Training. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Serenity International Nursing Recruitment. All rights reserved.</p>
             <div className="flex gap-4">
               <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <Link to="/contact" className="hover:text-primary">Contact</Link>
