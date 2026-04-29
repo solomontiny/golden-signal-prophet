@@ -181,7 +181,7 @@ const ChatWidget = () => {
             )}
             {errored && (
               <a
-                href={waLink(input || messages.findLast?.((m) => m.role === "user")?.content)}
+                href={waLink(input || [...messages].reverse().find((m) => m.role === "user")?.content)}
                 target="_blank"
                 rel="noreferrer"
                 className="block text-center text-sm font-medium bg-green-600 text-white rounded-xl px-3 py-2 hover:bg-green-700"
