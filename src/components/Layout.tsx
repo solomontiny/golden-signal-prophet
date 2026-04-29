@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
+import ChatWidget from "@/components/ChatWidget";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -185,6 +186,7 @@ const Layout = () => {
           </div>
         </div>
       </footer>
+      <ChatWidget />
     </div>
   );
 };
