@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "luc
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
 import ChatWidget from "@/components/ChatWidget";
+import AnnouncementBar from "@/components/AnnouncementBar";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -36,8 +37,11 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      {/* Announcement ticker */}
+      <AnnouncementBar />
+
       {/* Top info bar */}
-      <div className="hidden md:block bg-primary text-primary-foreground text-xs">
+      <div className="hidden md:block bg-secondary text-secondary-foreground text-xs border-b border-border">
         <div className="container flex justify-between items-center h-9">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5"><Phone className="h-3 w-3" /> +974 7202 1636</span>
@@ -51,7 +55,7 @@ const Layout = () => {
 
       {/* Header */}
       <header
-        className={`sticky top-0 z-50 transition-all ${
+        className={`sticky top-9 md:top-10 z-50 transition-all ${
           scrolled ? "bg-background/90 backdrop-blur border-b border-border shadow-soft" : "bg-background"
         }`}
       >
