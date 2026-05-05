@@ -55,7 +55,7 @@ const Layout = () => {
 
       {/* Header */}
       <header
-        className={`sticky top-9 md:top-10 z-50 transition-all ${
+        className={`sticky top-11 md:top-12 z-50 transition-all ${
           scrolled ? "bg-background/90 backdrop-blur border-b border-border shadow-soft" : "bg-background"
         }`}
       >
