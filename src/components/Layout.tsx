@@ -4,6 +4,7 @@ import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "luc
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
 import ChatWidget from "@/components/ChatWidget";
+import AnnouncementBar from "@/components/AnnouncementBar";
 
 const nav = [
   { to: "/", label: "Home" },
