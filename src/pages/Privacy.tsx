@@ -23,7 +23,7 @@ const sections = [
   },
   {
     h: "6. Your rights",
-    p: "You have the right to access, correct, update or delete your personal information, and to withdraw consent to further processing. To exercise these rights, email info@serenitynursing.qa.",
+    p: "You have the right to access, correct, update or delete your personal information, and to withdraw consent to further processing. To exercise these rights, email Infoserenityconsultancyagency@gmail.com.",
   },
   {
     h: "7. Security",
@@ -39,7 +39,7 @@ const sections = [
   },
   {
     h: "10. Contact",
-    p: "Questions about this policy? Email info@serenitynursing.qa or write to our Doha office.",
+    p: "Questions about this policy? Email Infoserenityconsultancyagency@gmail.com or write to our Doha office.",
   },
 ];
 

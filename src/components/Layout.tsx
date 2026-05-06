@@ -46,7 +46,7 @@ const Layout = () => {
         <div className="container flex justify-between items-center h-9">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5"><Phone className="h-3 w-3" /> +974 7202 1636</span>
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> info@serenitynursing.qa</span>
+            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> Infoserenityconsultancyagency@gmail.com</span>
           </div>
           <div className="flex items-center gap-1.5">
             <MapPin className="h-3 w-3" /> Doha, Qatar — Serving the GCC
@@ -179,7 +179,7 @@ const Layout = () => {
             <ul className="space-y-3 text-sm text-background/70">
               <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" /> 448 Al Sarj Street, Fereej Al Murra, Zone 55, Doha, Qatar</li>
               <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> +974 7202 1636</li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> info@serenitynursing.qa</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> Infoserenityconsultancyagency@gmail.com</li>
             </ul>
           </div>
         </div>
