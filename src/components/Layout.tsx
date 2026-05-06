@@ -127,6 +127,8 @@ const Layout = () => {
         )}
       </header>
 
+      <UrgentBar />
+
       <main className="flex-1">
         <Outlet />
       </main>
