@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
 import ChatWidget from "@/components/ChatWidget";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import UrgentBar from "@/components/UrgentBar";
 
 const nav = [
   { to: "/", label: "Home" },
