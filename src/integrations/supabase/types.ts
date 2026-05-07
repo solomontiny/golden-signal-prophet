@@ -14,6 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      applications: {
+        Row: {
+          created_at: string
+          cv_path: string | null
+          email: string
+          experience_years: number
+          first_name: string
+          id: string
+          last_name: string
+          licenses: string | null
+          message: string | null
+          nationality: string | null
+          phone: string
+          preferred_country: string | null
+          specialty: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          cv_path?: string | null
+          email: string
+          experience_years?: number
+          first_name: string
+          id?: string
+          last_name: string
+          licenses?: string | null
+          message?: string | null
+          nationality?: string | null
+          phone: string
+          preferred_country?: string | null
+          specialty: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          cv_path?: string | null
+          email?: string
+          experience_years?: number
+          first_name?: string
+          id?: string
+          last_name?: string
+          licenses?: string | null
+          message?: string | null
+          nationality?: string | null
+          phone?: string
+          preferred_country?: string | null
+          specialty?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       signals: {
         Row: {
           confidence: number | null
@@ -123,7 +177,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: { Args: never; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
