@@ -159,15 +159,15 @@ const Home = () => {
 
       {/* CTA */}
       <section className="container pb-16 lg:pb-24">
-        <div className="relative overflow-hidden rounded-3xl bg-hero text-primary-foreground p-10 md:p-14">
-          <div className="relative z-10 grid md:grid-cols-[1.5fr_auto] gap-6 items-center">
+        <div className="relative overflow-hidden rounded-3xl bg-hero text-primary-foreground p-7 sm:p-10 md:p-14 shadow-glow">
+          <div className="relative z-10 grid md:grid-cols-[1.5fr_auto] gap-5 sm:gap-6 items-center">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold">Ready to launch your career abroad?</h2>
-              <p className="mt-3 text-primary-foreground/90 max-w-xl">
+              <h2 className="font-serif font-bold">Ready to launch your career abroad?</h2>
+              <p className="mt-3 text-primary-foreground/90 max-w-xl text-sm sm:text-base">
                 Submit your profile today — our team will reach out within 48 hours with opportunities that match your experience.
               </p>
             </div>
-            <Button asChild size="lg" variant="secondary" className="justify-self-start md:justify-self-end">
+            <Button asChild size="lg" variant="secondary" className="justify-self-start md:justify-self-end rounded-full w-full sm:w-auto h-12">
               <Link to="/apply">Start Application <ArrowRight className="h-4 w-4" /></Link>
             </Button>
           </div>
