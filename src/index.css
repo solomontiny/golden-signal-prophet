@@ -6,48 +6,50 @@
 
 @layer base {
   :root {
-    --background: 210 40% 99%;
-    --foreground: 215 35% 15%;
+    --background: 200 50% 98.5%;
+    --foreground: 210 40% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 35% 15%;
+    --card-foreground: 210 40% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 35% 15%;
+    --popover-foreground: 210 40% 14%;
 
-    /* Calm medical teal-blue */
-    --primary: 200 85% 38%;
+    /* Soft serenity teal-blue */
+    --primary: 195 70% 42%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 195 85% 55%;
+    --primary-glow: 188 80% 62%;
 
-    --secondary: 200 30% 95%;
-    --secondary-foreground: 200 60% 25%;
+    --secondary: 195 45% 94%;
+    --secondary-foreground: 200 55% 22%;
 
-    --muted: 210 30% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 200 35% 95.5%;
+    --muted-foreground: 210 14% 45%;
 
-    --accent: 165 60% 45%;
+    --accent: 168 58% 48%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 50%;
+    --destructive: 0 72% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --success: 145 60% 42%;
+    --success: 148 55% 44%;
     --success-foreground: 0 0% 100%;
 
-    --border: 210 25% 90%;
-    --input: 210 25% 90%;
-    --ring: 200 85% 38%;
+    --border: 200 30% 90%;
+    --input: 200 30% 90%;
+    --ring: 195 70% 42%;
 
-    --radius: 0.75rem;
+    --radius: 1.1rem;
 
-    --gradient-hero: linear-gradient(135deg, hsl(200 85% 38%), hsl(195 85% 55%));
-    --gradient-soft: linear-gradient(180deg, hsl(200 60% 97%), hsl(0 0% 100%));
-    --gradient-accent: linear-gradient(135deg, hsl(165 60% 45%), hsl(180 65% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(195 70% 42%) 0%, hsl(188 80% 62%) 60%, hsl(168 65% 60%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(195 60% 97%) 0%, hsl(168 50% 97%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(168 58% 48%), hsl(188 70% 58%));
+    --gradient-mesh: radial-gradient(at 20% 10%, hsl(195 80% 90% / 0.55) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(168 70% 88% / 0.5) 0px, transparent 50%), radial-gradient(at 80% 90%, hsl(188 85% 90% / 0.4) 0px, transparent 50%);
 
-    --shadow-soft: 0 4px 24px -8px hsl(200 60% 30% / 0.12);
-    --shadow-card: 0 8px 32px -12px hsl(200 60% 30% / 0.15);
-    --shadow-glow: 0 0 48px -12px hsl(200 85% 55% / 0.45);
+    --shadow-soft: 0 6px 28px -10px hsl(195 60% 35% / 0.14);
+    --shadow-card: 0 14px 44px -18px hsl(195 55% 30% / 0.22);
+    --shadow-glow: 0 0 56px -10px hsl(188 85% 60% / 0.5);
+    --shadow-pillow: 0 1px 0 hsl(0 0% 100% / 0.6) inset, 0 -1px 0 hsl(195 30% 80% / 0.3) inset, 0 12px 30px -16px hsl(195 50% 30% / 0.25);
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 215 35% 15%;
@@ -94,7 +96,18 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: var(--gradient-mesh);
+    background-attachment: fixed;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
   }
+
+  /* Mobile-first fluid type */
+  h1 { font-size: clamp(2rem, 6vw, 3.75rem); }
+  h2 { font-size: clamp(1.5rem, 4.2vw, 2.5rem); }
+  h3 { font-size: clamp(1.15rem, 2.6vw, 1.5rem); }
+
+  ::selection { background: hsl(var(--primary) / 0.18); color: hsl(var(--foreground)); }
 
   h1, h2, h3, h4 {
     font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
@@ -120,6 +133,18 @@
   }
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+  .shadow-pillow {
+    box-shadow: var(--shadow-pillow);
+  }
+  .bg-mesh {
+    background-image: var(--gradient-mesh);
+  }
+  .glass {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border: 1px solid hsl(0 0% 100% / 0.6);
   }
   .text-gradient {
     background: var(--gradient-hero);
