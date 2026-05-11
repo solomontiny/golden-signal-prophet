@@ -25,26 +25,28 @@ const Home = () => {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-soft">
-        <div className="container grid lg:grid-cols-2 gap-10 lg:gap-16 py-14 lg:py-24 items-center">
+        <div aria-hidden className="pointer-events-none absolute -top-32 -left-24 w-[28rem] h-[28rem] rounded-full bg-primary/15 blur-3xl" />
+        <div aria-hidden className="pointer-events-none absolute -bottom-32 -right-24 w-[26rem] h-[26rem] rounded-full bg-accent/15 blur-3xl" />
+        <div className="container relative grid lg:grid-cols-2 gap-8 lg:gap-16 py-10 sm:py-14 lg:py-24 items-center">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">
-              <ShieldCheck className="h-3.5 w-3.5" /> Licensed Recruitment Agency · Qatar
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-secondary-foreground text-[11px] sm:text-xs font-medium shadow-soft">
+              <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Licensed Recruitment Agency · Qatar
             </span>
-            <h1 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
+            <h1 className="mt-4 sm:mt-5 font-serif font-bold leading-[1.05] tracking-tight">
               Your trusted bridge to a <span className="text-gradient">nursing career in the GCC</span>
             </h1>
-            <p className="mt-5 text-lg text-muted-foreground max-w-xl leading-relaxed">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
               We recruit qualified nurses for hospitals across Qatar, UAE, Saudi Arabia, Kuwait, Bahrain and Oman — and provide training, documentation and visa support every step of the way.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="bg-hero text-primary-foreground shadow-glow hover:opacity-90">
+            <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
+              <Button asChild size="lg" className="bg-hero text-primary-foreground shadow-glow hover:opacity-90 rounded-full w-full sm:w-auto h-12">
                 <Link to="/apply">Apply Now <ArrowRight className="h-4 w-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="rounded-full w-full sm:w-auto h-12 border-primary/20 hover:bg-secondary/60">
                 <Link to="/jobs">View Open Positions</Link>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+            <div className="mt-7 sm:mt-8 flex flex-wrap gap-x-5 gap-y-2">
               {["Free consultation", "Fast-track processing", "Ongoing career support"].map((f) => (
                 <span key={f} className="flex items-center gap-2 text-sm text-foreground/80">
                   <CheckCircle2 className="h-4 w-4 text-accent" /> {f}
@@ -61,13 +63,13 @@ const Home = () => {
               height={800}
               className="relative rounded-3xl shadow-card w-full h-auto object-cover"
             />
-            <div className="hidden md:flex absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-card p-4 gap-3 items-center animate-float">
-              <div className="w-10 h-10 rounded-full bg-accent grid place-items-center">
-                <Award className="h-5 w-5 text-accent-foreground" />
+            <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-6 glass rounded-2xl shadow-pillow p-3 sm:p-4 flex gap-3 items-center animate-float">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent grid place-items-center shrink-0">
+                <Award className="h-4 w-4 sm:h-5 sm:w-5 text-accent-foreground" />
               </div>
               <div>
-                <div className="text-sm font-semibold">1,200+ placements</div>
-                <div className="text-xs text-muted-foreground">Across the GCC</div>
+                <div className="text-xs sm:text-sm font-semibold">1,200+ placements</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground">Across the GCC</div>
               </div>
             </div>
           </div>
