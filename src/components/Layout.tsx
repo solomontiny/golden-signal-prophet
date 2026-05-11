@@ -57,15 +57,15 @@ const Layout = () => {
       {/* Header */}
       <header
         className={`sticky top-11 md:top-12 z-50 transition-all ${
-          scrolled ? "bg-background/90 backdrop-blur border-b border-border shadow-soft" : "bg-background"
+          scrolled ? "glass border-b border-border/60 shadow-soft" : "bg-background/70 backdrop-blur-sm"
         }`}
       >
-        <div className="container flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <img src={logo} alt="Serenity International Nursing Recruitment logo" className="w-11 h-11 rounded-xl object-cover shadow-glow group-hover:scale-105 transition-transform bg-white" />
-            <div className="leading-tight">
-              <div className="font-serif text-base md:text-lg font-bold tracking-tight">Serenity International</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Nursing Recruitment</div>
+        <div className="container flex items-center justify-between h-14 md:h-16 lg:h-20 gap-2">
+          <Link to="/" className="flex items-center gap-2 md:gap-2.5 group min-w-0">
+            <img src={logo} alt="Serenity International Nursing Recruitment logo" className="w-9 h-9 md:w-11 md:h-11 rounded-xl object-cover shadow-glow group-hover:scale-105 transition-transform bg-white shrink-0" />
+            <div className="leading-tight min-w-0">
+              <div className="font-serif text-sm md:text-lg font-bold tracking-tight truncate">Serenity International</div>
+              <div className="hidden sm:block text-[9px] md:text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Nursing Recruitment</div>
             </div>
           </Link>
 
@@ -76,9 +76,9 @@ const Layout = () => {
                 to={n.to}
                 end={n.to === "/"}
                 className={({ isActive }) =>
-                  `px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  `px-3 py-2 rounded-full text-sm font-medium transition-all ${
                     isActive
-                      ? "text-primary bg-secondary"
+                      ? "text-primary bg-secondary shadow-soft"
                       : "text-foreground/80 hover:text-primary hover:bg-secondary/60"
                   }`
                 }
@@ -88,13 +88,13 @@ const Layout = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Button asChild className="hidden md:inline-flex bg-hero hover:opacity-90 text-primary-foreground shadow-glow">
+          <div className="flex items-center gap-1.5 md:gap-2 shrink-0">
+            <Button asChild className="hidden md:inline-flex bg-hero hover:opacity-90 text-primary-foreground shadow-glow rounded-full">
               <Link to="/apply">Apply Now</Link>
             </Button>
             <button
               aria-label="Toggle menu"
-              className="lg:hidden p-2 rounded-md hover:bg-secondary"
+              className="lg:hidden p-2.5 rounded-full hover:bg-secondary active:scale-95 transition-transform"
               onClick={() => setOpen((v) => !v)}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -103,23 +103,23 @@ const Layout = () => {
         </div>
 
         {open && (
-          <div className="lg:hidden border-t border-border bg-background animate-fade-up">
-            <div className="container py-3 flex flex-col">
+          <div className="lg:hidden border-t border-border/60 glass animate-fade-up">
+            <div className="container py-3 flex flex-col max-h-[70vh] overflow-y-auto">
               {nav.map((n) => (
                 <NavLink
                   key={n.to}
                   to={n.to}
                   end={n.to === "/"}
                   className={({ isActive }) =>
-                    `px-3 py-2.5 rounded-md text-sm font-medium ${
-                      isActive ? "text-primary bg-secondary" : "text-foreground/80 hover:bg-secondary/60"
+                    `px-3 py-3 rounded-xl text-[15px] font-medium ${
+                      isActive ? "text-primary bg-secondary" : "text-foreground/85 hover:bg-secondary/60"
                     }`
                   }
                 >
                   {n.label}
                 </NavLink>
               ))}
-              <Button asChild className="mt-3 bg-hero text-primary-foreground">
+              <Button asChild className="mt-3 bg-hero text-primary-foreground rounded-full h-11">
                 <Link to="/apply">Apply Now</Link>
               </Button>
             </div>
