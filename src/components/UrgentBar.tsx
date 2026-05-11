@@ -26,7 +26,7 @@ const UrgentBar = ({ messages = defaultMessages, speed = 18 }: UrgentBarProps) =
     <div
       role="alert"
       aria-label="Urgent updates"
-      className="w-full bg-[hsl(0_84%_50%)] text-white border-y border-[hsl(0_84%_38%)] shadow-[0_4px_12px_-4px_hsl(0_84%_40%/0.5)]"
+      className="fixed bottom-0 left-0 right-0 z-40 w-full bg-[hsl(0_84%_50%)] text-white border-t border-[hsl(0_84%_38%)] shadow-[0_-6px_20px_-6px_hsl(0_84%_40%/0.55)] backdrop-blur-sm"
     >
       <div className="relative flex items-stretch overflow-hidden h-11 md:h-12">
         <div className="hidden sm:flex items-center gap-1.5 px-4 bg-[hsl(0_84%_42%)] shrink-0 border-r border-[hsl(0_84%_38%)]">

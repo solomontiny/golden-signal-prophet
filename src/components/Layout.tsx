@@ -127,8 +127,6 @@ const Layout = () => {
         )}
       </header>
 
-      <UrgentBar />
-
       <main className="flex-1">
         <Outlet />
       </main>
@@ -193,6 +191,8 @@ const Layout = () => {
           </div>
         </div>
       </footer>
+      <UrgentBar />
+      <div aria-hidden className="h-11 md:h-12" />
       <ChatWidget />
     </div>
   );
