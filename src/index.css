@@ -134,6 +134,18 @@
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
+  .shadow-pillow {
+    box-shadow: var(--shadow-pillow);
+  }
+  .bg-mesh {
+    background-image: var(--gradient-mesh);
+  }
+  .glass {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border: 1px solid hsl(0 0% 100% / 0.6);
+  }
   .text-gradient {
     background: var(--gradient-hero);
     -webkit-background-clip: text;
