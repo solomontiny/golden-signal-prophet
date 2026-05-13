@@ -32,7 +32,7 @@ const Contact = () => {
           {[
             { icon: MapPin, label: "Office", value: "448 Al Sarj Street, Fereej Al Murra, Zone 55, Doha, Qatar" },
             { icon: Phone, label: "Phone", value: "+974 7202 1636" },
-            { icon: Mail, label: "Email", value: "Infoserenityconsultancyagency@gmail.com" },
+            { icon: Mail, label: "Email", value: "serenityecdemltd@gmail.com" },
             { icon: Clock, label: "Hours", value: "Sun – Thu · 9:00 AM – 6:00 PM (GST)" },
           ].map((i) => (
             <div key={i.label} className="flex gap-4 bg-card rounded-2xl p-5 border border-border">

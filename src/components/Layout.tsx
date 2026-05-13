@@ -46,7 +46,7 @@ const Layout = () => {
         <div className="container flex justify-between items-center h-9">
           <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5"><Phone className="h-3 w-3" /> +974 7202 1636</span>
-            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> Infoserenityconsultancyagency@gmail.com</span>
+            <span className="flex items-center gap-1.5"><Mail className="h-3 w-3" /> serenityecdemltd@gmail.com</span>
           </div>
           <div className="flex items-center gap-1.5">
             <MapPin className="h-3 w-3" /> Doha, Qatar — Serving the GCC
@@ -62,9 +62,9 @@ const Layout = () => {
       >
         <div className="container flex items-center justify-between h-14 md:h-16 lg:h-20 gap-2">
           <Link to="/" className="flex items-center gap-2 md:gap-2.5 group min-w-0">
-            <img src={logo} alt="Serenity International Nursing Recruitment logo" className="w-9 h-9 md:w-11 md:h-11 rounded-xl object-cover shadow-glow group-hover:scale-105 transition-transform bg-white shrink-0" />
+            <img src={logo} alt="Serenity ECDEM Global Limited logo" className="w-9 h-9 md:w-11 md:h-11 rounded-xl object-cover shadow-glow group-hover:scale-105 transition-transform bg-white shrink-0" />
             <div className="leading-tight min-w-0">
-              <div className="font-serif text-sm md:text-lg font-bold tracking-tight truncate">Serenity International</div>
+              <div className="font-serif text-sm md:text-lg font-bold tracking-tight truncate">Serenity ECDEM Global Limited</div>
               <div className="hidden sm:block text-[9px] md:text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Nursing Recruitment</div>
             </div>
           </Link>
@@ -136,8 +136,8 @@ const Layout = () => {
         <div className="container py-14 grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <img src={logo} alt="Serenity International Nursing Recruitment logo" className="w-11 h-11 rounded-xl object-cover bg-white" />
-              <div className="font-serif text-lg font-bold text-background leading-tight">Serenity International<br /><span className="text-xs font-normal text-background/70">Nursing Recruitment</span></div>
+              <img src={logo} alt="Serenity ECDEM Global Limited logo" className="w-11 h-11 rounded-xl object-cover bg-white" />
+              <div className="font-serif text-lg font-bold text-background leading-tight">Serenity ECDEM Global Limited<br /><span className="text-xs font-normal text-background/70">Nursing Recruitment</span></div>
             </div>
             <p className="text-sm text-background/70 leading-relaxed">
               Trusted nursing recruitment and training partner — placing qualified nurses across Qatar and the GCC for over 3 years.
@@ -177,13 +177,13 @@ const Layout = () => {
             <ul className="space-y-3 text-sm text-background/70">
               <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" /> 448 Al Sarj Street, Fereej Al Murra, Zone 55, Doha, Qatar</li>
               <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> +974 7202 1636</li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> Infoserenityconsultancyagency@gmail.com</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> serenityecdemltd@gmail.com</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-background/10">
           <div className="container py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-background/60">
-            <p>© {new Date().getFullYear()} Serenity International Nursing Recruitment. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Serenity ECDEM Global Limited. All rights reserved.</p>
             <div className="flex gap-4">
               <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
               <Link to="/contact" className="hover:text-primary">Contact</Link>

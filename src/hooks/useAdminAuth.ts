@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Session, User } from "@supabase/supabase-js";
 
-export const ADMIN_EMAIL = "Infoserenityconsultancyagency@gmail.com";
+export const ADMIN_EMAIL = "serenityecdemltd@gmail.com";
 
 export const useAdminAuth = () => {
   const [session, setSession] = useState<Session | null>(null);

@@ -9,7 +9,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 const WHATSAPP = "97472021636";
 const GREETING: Msg = {
   role: "assistant",
-  content: "Hi! I'm Sarah from Serenity International. How can I help you today?",
+  content: "Hi! I'm Sarah from Serenity ECDEM Global Limited. How can I help you today?",
 };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat-support`;
@@ -155,7 +155,7 @@ const ChatWidget = () => {
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-semibold leading-tight">Sarah · Support</p>
-              <p className="text-xs opacity-90">Serenity International · Online</p>
+              <p className="text-xs opacity-90">Serenity ECDEM Global Limited · Online</p>
             </div>
           </div>
 
