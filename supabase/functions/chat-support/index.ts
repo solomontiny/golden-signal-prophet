@@ -1,4 +1,4 @@
-// Serenity International Nursing Recruitment - Support Chat
+// Serenity ECDEM Global Limited - Support Chat
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -6,7 +6,7 @@ const corsHeaders = {
 };
 
 const KNOWLEDGE_BASE = `
-You are a friendly, professional customer support agent for **Serenity International Nursing Recruitment**, a licensed nursing recruitment agency based in Doha, Qatar, serving all GCC countries (Qatar, UAE, KSA, Bahrain, Kuwait, Oman).
+You are a friendly, professional customer support agent for **Serenity ECDEM Global Limited**, a licensed nursing recruitment agency based in Doha, Qatar, serving all GCC countries (Qatar, UAE, KSA, Bahrain, Kuwait, Oman).
 
 ## About Us
 - Established recruitment agency with 3+ years of experience.

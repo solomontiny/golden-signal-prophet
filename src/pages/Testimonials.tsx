@@ -2,7 +2,7 @@ import { Quote, Star } from "lucide-react";
 import PageHeader from "@/components/PageHeader";
 
 const reviews = [
-  { name: "Maria Santos", role: "ICU Nurse · Doha, Qatar", text: "From Prometric coaching to visa processing, Serenity International handled everything. I landed my dream ICU role in Doha within four months.", rating: 5 },
+  { name: "Maria Santos", role: "ICU Nurse · Doha, Qatar", text: "From Prometric coaching to visa processing, Serenity ECDEM Global Limited handled everything. I landed my dream ICU role in Doha within four months.", rating: 5 },
   { name: "Rajesh Kumar", role: "ER Nurse · Dubai, UAE", text: "Their team was honest about every step. No hidden fees, clear timelines, and an advisor who actually picked up the phone.", rating: 5 },
   { name: "Fatima Abdullah", role: "Paediatric Nurse · Riyadh, KSA", text: "The interview prep made a huge difference — I walked into my panel interview confident and got the offer the same week.", rating: 5 },
   { name: "Joy Okafor", role: "OT Nurse · Kuwait City", text: "I was overwhelmed by DataFlow. They organised every document and I got verified faster than colleagues who applied alone.", rating: 5 },

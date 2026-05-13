@@ -77,7 +77,7 @@ const Apply = () => {
 
       // WhatsApp notification — opens prefilled message to admin number
       const lines = [
-        "*New Application — Serenity International*",
+        "*New Application — Serenity ECDEM Global Limited*",
         `*Name:* ${data.first_name} ${data.last_name}`,
         `*Email:* ${data.email}`,
         `*Phone:* ${data.phone}`,
@@ -164,7 +164,7 @@ const Apply = () => {
           </div>
           <div className="bg-card rounded-3xl p-8 border border-border">
             <h4 className="font-serif text-lg font-semibold">Prefer to email?</h4>
-            <p className="mt-2 text-sm text-muted-foreground">Send your CV directly to <a href="mailto:Infoserenityconsultancyagency@gmail.com" className="text-primary font-medium">Infoserenityconsultancyagency@gmail.com</a> — we respond to every application.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Send your CV directly to <a href="mailto:serenityecdemltd@gmail.com" className="text-primary font-medium">serenityecdemltd@gmail.com</a> — we respond to every application.</p>
           </div>
         </aside>
       </section>
