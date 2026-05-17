@@ -33,7 +33,16 @@ const ChatWidget = () => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [errored, setErrored] = useState(false);
+  const [online, setOnline] = useState(isAgentOnline());
+  const [ticket, setTicket] = useState({ name: "", email: "", subject: "", message: "" });
+  const [ticketSubmitting, setTicketSubmitting] = useState(false);
+  const [ticketSent, setTicketSent] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => setOnline(isAgentOnline()), 60_000);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
