@@ -3,6 +3,7 @@ import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import sarahAvatar from "@/assets/sarah-support.jpg";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -148,9 +149,14 @@ const ChatWidget = () => {
           {/* Header */}
           <div className="flex items-center gap-3 p-4 bg-primary text-primary-foreground">
             <div className="relative">
-              <div className="h-10 w-10 rounded-full bg-primary-foreground/20 flex items-center justify-center font-semibold">
-                S
-              </div>
+              <img
+                src={sarahAvatar}
+                alt="Sarah, customer support representative"
+                width={40}
+                height={40}
+                loading="lazy"
+                className="h-10 w-10 rounded-full object-cover ring-2 ring-primary-foreground/30"
+              />
               <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-primary" />
             </div>
             <div className="flex-1 min-w-0">
