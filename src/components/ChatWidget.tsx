@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Ticket, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 import sarahAvatar from "@/assets/sarah-support.jpg";
 
 type Msg = { role: "user" | "assistant"; content: string };
@@ -11,6 +15,14 @@ const WHATSAPP = "97472021636";
 const GREETING: Msg = {
   role: "assistant",
   content: "Hi! I'm Sarah from Serenity ECDEM Global Limited. How can I help you today?",
+};
+
+// Support hours: Mon–Sat, 08:00–20:00 (local browser time)
+const isAgentOnline = () => {
+  const now = new Date();
+  const day = now.getDay(); // 0 Sun, 6 Sat
+  const hour = now.getHours();
+  return day !== 0 && hour >= 8 && hour < 20;
 };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat-support`;
