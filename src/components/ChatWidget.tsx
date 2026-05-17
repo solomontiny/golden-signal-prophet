@@ -160,7 +160,12 @@ const ChatWidget = () => {
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
         {!open && (
-          <span className="absolute top-0 right-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-background animate-pulse" />
+          <span
+            className={cn(
+              "absolute top-0 right-0 h-3 w-3 rounded-full ring-2 ring-background",
+              online ? "bg-green-500 animate-pulse" : "bg-amber-500",
+            )}
+          />
         )}
       </button>
 
@@ -178,75 +183,173 @@ const ChatWidget = () => {
                 loading="lazy"
                 className="h-10 w-10 rounded-full object-cover ring-2 ring-primary-foreground/30"
               />
-              <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-primary" />
+              <span
+                className={cn(
+                  "absolute bottom-0 right-0 h-3 w-3 rounded-full ring-2 ring-primary",
+                  online ? "bg-green-500" : "bg-amber-500",
+                )}
+              />
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-semibold leading-tight">Sarah · Support</p>
-              <p className="text-xs opacity-90">Serenity ECDEM Global Limited · Online</p>
+              <p className="text-xs opacity-90 flex items-center gap-1.5">
+                <span
+                  className={cn(
+                    "inline-block h-1.5 w-1.5 rounded-full",
+                    online ? "bg-green-400" : "bg-amber-400",
+                  )}
+                />
+                {online ? "Online · replies in minutes" : "Offline · leave us a ticket"}
+              </p>
             </div>
           </div>
 
-          {/* Messages */}
-          <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3 bg-muted/30">
-            {messages.map((m, i) => (
-              <div
-                key={i}
-                className={cn(
-                  "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm whitespace-pre-wrap break-words",
-                  m.role === "user"
-                    ? "ml-auto bg-primary text-primary-foreground rounded-br-sm"
-                    : "bg-background border border-border rounded-bl-sm",
+          {online ? (
+            <>
+              {/* Messages */}
+              <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-3 bg-muted/30">
+                {messages.map((m, i) => (
+                  <div
+                    key={i}
+                    className={cn(
+                      "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm whitespace-pre-wrap break-words",
+                      m.role === "user"
+                        ? "ml-auto bg-primary text-primary-foreground rounded-br-sm"
+                        : "bg-background border border-border rounded-bl-sm",
+                    )}
+                  >
+                    {m.content || <span className="opacity-60">…</span>}
+                  </div>
+                ))}
+                {loading && messages[messages.length - 1]?.role === "user" && (
+                  <div className="bg-background border border-border rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm w-fit">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  </div>
                 )}
-              >
-                {m.content || <span className="opacity-60">…</span>}
+                {errored && (
+                  <a
+                    href={waLink(input || [...messages].reverse().find((m) => m.role === "user")?.content)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-center text-sm font-medium bg-green-600 text-white rounded-xl px-3 py-2 hover:bg-green-700"
+                  >
+                    Continue on WhatsApp →
+                  </a>
+                )}
               </div>
-            ))}
-            {loading && messages[messages.length - 1]?.role === "user" && (
-              <div className="bg-background border border-border rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm w-fit">
-                <Loader2 className="h-4 w-4 animate-spin" />
-              </div>
-            )}
-            {errored && (
-              <a
-                href={waLink(input || [...messages].reverse().find((m) => m.role === "user")?.content)}
-                target="_blank"
-                rel="noreferrer"
-                className="block text-center text-sm font-medium bg-green-600 text-white rounded-xl px-3 py-2 hover:bg-green-700"
-              >
-                Continue on WhatsApp →
-              </a>
-            )}
-          </div>
 
-          {/* Input */}
-          <div className="p-3 border-t border-border bg-background">
-            <div className="flex gap-2">
-              <Input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
+              {/* Input */}
+              <div className="p-3 border-t border-border bg-background">
+                <div className="flex gap-2">
+                  <Input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        send();
+                      }
+                    }}
+                    placeholder="Type your message…"
+                    disabled={loading}
+                    className="flex-1"
+                  />
+                  <Button onClick={send} disabled={loading || !input.trim()} size="icon" aria-label="Send">
+                    <Send className="h-4 w-4" />
+                  </Button>
+                </div>
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 block text-center text-xs text-muted-foreground hover:text-primary"
+                >
+                  Prefer WhatsApp? Chat with us at +974 7202 1636
+                </a>
+              </div>
+            </>
+          ) : (
+            <div className="flex-1 overflow-y-auto p-4 bg-muted/30">
+              {ticketSent ? (
+                <div className="h-full flex flex-col items-center justify-center text-center gap-3 py-8">
+                  <CheckCircle2 className="h-12 w-12 text-green-600" />
+                  <h3 className="font-semibold text-base">Ticket received</h3>
+                  <p className="text-sm text-muted-foreground max-w-[260px]">
+                    Thanks! Our team will reply to your email within one business day.
+                  </p>
+                  <a
+                    href={waLink(ticket.message)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-2 inline-flex items-center justify-center text-sm font-medium bg-green-600 text-white rounded-xl px-4 py-2 hover:bg-green-700"
+                  >
+                    Need it urgent? WhatsApp us →
+                  </a>
+                </div>
+              ) : (
+                <form
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    send();
-                  }
-                }}
-                placeholder="Type your message…"
-                disabled={loading}
-                className="flex-1"
-              />
-              <Button onClick={send} disabled={loading || !input.trim()} size="icon" aria-label="Send">
-                <Send className="h-4 w-4" />
-              </Button>
+                    if (ticketSubmitting) return;
+                    const name = ticket.name.trim();
+                    const email = ticket.email.trim();
+                    const subject = ticket.subject.trim();
+                    const message = ticket.message.trim();
+                    if (!name || !email || !subject || !message) return;
+                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                      toast({ title: "Invalid email", description: "Please enter a valid email address.", variant: "destructive" });
+                      return;
+                    }
+                    setTicketSubmitting(true);
+                    const { error } = await supabase.from("support_tickets").insert({ name, email, subject, message });
+                    setTicketSubmitting(false);
+                    if (error) {
+                      toast({ title: "Couldn't send ticket", description: error.message, variant: "destructive" });
+                      return;
+                    }
+                    setTicketSent(true);
+                  }}
+                  className="space-y-3"
+                >
+                  <div className="flex items-start gap-2 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900 p-3 text-xs text-amber-900 dark:text-amber-200">
+                    <Ticket className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                    <span>We're offline right now. Leave a ticket and we'll email you back within one business day.</span>
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="t-name" className="text-xs">Name</Label>
+                    <Input id="t-name" required maxLength={100} value={ticket.name}
+                      onChange={(e) => setTicket((t) => ({ ...t, name: e.target.value }))} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="t-email" className="text-xs">Email</Label>
+                    <Input id="t-email" type="email" required maxLength={255} value={ticket.email}
+                      onChange={(e) => setTicket((t) => ({ ...t, email: e.target.value }))} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="t-subject" className="text-xs">Subject</Label>
+                    <Input id="t-subject" required maxLength={200} value={ticket.subject}
+                      onChange={(e) => setTicket((t) => ({ ...t, subject: e.target.value }))} />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="t-message" className="text-xs">Message</Label>
+                    <Textarea id="t-message" required maxLength={5000} rows={4} value={ticket.message}
+                      onChange={(e) => setTicket((t) => ({ ...t, message: e.target.value }))} />
+                  </div>
+                  <Button type="submit" className="w-full" disabled={ticketSubmitting}>
+                    {ticketSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : "Submit ticket"}
+                  </Button>
+                  <a
+                    href={waLink()}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block text-center text-xs text-muted-foreground hover:text-primary"
+                  >
+                    Or message us on WhatsApp →
+                  </a>
+                </form>
+              )}
             </div>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 block text-center text-xs text-muted-foreground hover:text-primary"
-            >
-              Prefer WhatsApp? Chat with us at +974 7202 1636
-            </a>
-          </div>
+          )}
         </div>
       )}
     </>
