@@ -6,13 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
-import { ADMIN_EMAIL, useAdminAuth } from "@/hooks/useAdminAuth";
+import { useAdminAuth } from "@/hooks/useAdminAuth";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
   const { isAdmin, loading: authLoading } = useAdminAuth();
   const [mode, setMode] = useState<"signin" | "signup">("signin");
-  const [email, setEmail] = useState(ADMIN_EMAIL);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -20,8 +20,8 @@ const AdminLogin = () => {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-      toast.error("Access restricted to the admin email.");
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Enter a valid email address.");
       return;
     }
     if (password.length < 8) {
