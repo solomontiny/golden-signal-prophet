@@ -2,9 +2,9 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
 
-const TikTokIcon = ({ className }: { className?: string }) => (
+const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.83a8.16 8.16 0 0 0 4.77 1.52V6.9a4.85 4.85 0 0 1-1.84-.21z"/>
+    <path d="M18.244 2H21l-6.51 7.44L22 22h-6.844l-4.77-6.231L4.8 22H2l6.96-7.953L2 2h6.91l4.31 5.7L18.244 2zm-1.198 18h1.83L7.06 4H5.1l11.946 16z"/>
   </svg>
 );
 import { Button } from "@/components/ui/button";
@@ -150,8 +150,8 @@ const Layout = () => {
             </p>
             <div className="flex gap-2 mt-4">
               <a href="https://www.facebook.com/serenityecdemltd81" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
-              <a href="https://www.instagram.com/serenityecdemltd81" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><Instagram className="h-4 w-4" /></a>
-              <a href="https://www.tiktok.com/@serenityecdemltd81" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><TikTokIcon className="h-4 w-4" /></a>
+              <a href="https://www.instagram.com/Ecdemserenity81" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><Instagram className="h-4 w-4" /></a>
+              <a href="https://x.com/Ecdemserenity81" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><XIcon className="h-4 w-4" /></a>
             </div>
           </div>
 
