@@ -157,6 +157,7 @@ const Layout = () => {
               <a href="https://www.facebook.com/serenityecdemltd81" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><Facebook className="h-4 w-4" /></a>
               <a href="https://www.instagram.com/Ecdemserenity81" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><Instagram className="h-4 w-4" /></a>
               <a href="https://x.com/Ecdemserenity81" target="_blank" rel="noopener noreferrer" aria-label="X" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><XIcon className="h-4 w-4" /></a>
+              <a href="https://www.tiktok.com/@serenityecdemltd81" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="w-9 h-9 grid place-items-center rounded-full bg-background/10 hover:bg-primary transition-colors"><TikTokIcon className="h-4 w-4" /></a>
             </div>
           </div>
 
