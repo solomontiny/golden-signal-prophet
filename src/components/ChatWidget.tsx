@@ -37,6 +37,7 @@ const ChatWidget = () => {
   const [ticket, setTicket] = useState({ name: "", email: "", subject: "", message: "" });
   const [ticketSubmitting, setTicketSubmitting] = useState(false);
   const [ticketSent, setTicketSent] = useState(false);
+  const [chatDark, setChatDark] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
