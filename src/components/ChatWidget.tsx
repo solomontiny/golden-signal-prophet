@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, Loader2, Ticket, CheckCircle2 } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Ticket, CheckCircle2, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -37,6 +37,7 @@ const ChatWidget = () => {
   const [ticket, setTicket] = useState({ name: "", email: "", subject: "", message: "" });
   const [ticketSubmitting, setTicketSubmitting] = useState(false);
   const [ticketSent, setTicketSent] = useState(false);
+  const [chatDark, setChatDark] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -171,6 +172,7 @@ const ChatWidget = () => {
 
       {/* Panel */}
       {open && (
+        <div className={cn(chatDark && "dark")}>
         <div className="fixed bottom-24 right-5 z-50 w-[calc(100vw-2.5rem)] max-w-sm h-[70vh] max-h-[560px] rounded-2xl bg-background border border-border shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4">
           {/* Header */}
           <div className="flex items-center gap-3 p-4 bg-primary text-primary-foreground">
@@ -202,6 +204,14 @@ const ChatWidget = () => {
                 {online ? "Online · replies in minutes" : "Offline · leave us a ticket"}
               </p>
             </div>
+            <button
+              onClick={() => setChatDark((v) => !v)}
+              aria-label={chatDark ? "Switch to light theme" : "Switch to dark theme"}
+              title={chatDark ? "Light theme" : "Dark theme"}
+              className="h-8 w-8 rounded-full flex items-center justify-center bg-primary-foreground/10 hover:bg-primary-foreground/20 transition-colors"
+            >
+              {chatDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
           </div>
 
           {online ? (
@@ -350,6 +360,7 @@ const ChatWidget = () => {
               )}
             </div>
           )}
+        </div>
         </div>
       )}
     </>
