@@ -328,21 +328,25 @@ const ChatWidget = () => {
                   <div className="space-y-1">
                     <Label htmlFor="t-name" className="text-xs dark:text-white">Name</Label>
                     <Input id="t-name" required maxLength={100} value={ticket.name}
+                      className="dark:text-white dark:placeholder:text-white/60"
                       onChange={(e) => setTicket((t) => ({ ...t, name: e.target.value }))} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="t-email" className="text-xs dark:text-white">Email</Label>
                     <Input id="t-email" type="email" required maxLength={255} value={ticket.email}
+                      className="dark:text-white dark:placeholder:text-white/60"
                       onChange={(e) => setTicket((t) => ({ ...t, email: e.target.value }))} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="t-subject" className="text-xs dark:text-white">Subject</Label>
                     <Input id="t-subject" required maxLength={200} value={ticket.subject}
+                      className="dark:text-white dark:placeholder:text-white/60"
                       onChange={(e) => setTicket((t) => ({ ...t, subject: e.target.value }))} />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="t-message" className="text-xs dark:text-white">Message</Label>
                     <Textarea id="t-message" required maxLength={5000} rows={4} value={ticket.message}
+                      className="dark:text-white dark:placeholder:text-white/60"
                       onChange={(e) => setTicket((t) => ({ ...t, message: e.target.value }))} />
                   </div>
                   <Button type="submit" className="w-full" disabled={ticketSubmitting}>
