@@ -361,6 +361,7 @@ const ChatWidget = () => {
             </div>
           )}
         </div>
+        </div>
       )}
     </>
   );
