@@ -8,13 +8,26 @@ import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import sarahAvatar from "@/assets/sarah-support.jpg";
+import bridgetAvatar from "@/assets/bridget-support.jpg";
+import rasheedaAvatar from "@/assets/rasheeda-support.jpg";
+import brianAvatar from "@/assets/brian-support.jpg";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
 const WHATSAPP = "97472021636";
+
+const REPS = [
+  { name: "Sarah", avatar: sarahAvatar },
+  { name: "Bridget", avatar: bridgetAvatar },
+  { name: "Rasheeda", avatar: rasheedaAvatar },
+  { name: "Brian", avatar: brianAvatar },
+] as const;
+
+const REP = REPS[Math.floor(Math.random() * REPS.length)];
+
 const GREETING: Msg = {
   role: "assistant",
-  content: "Hi! I'm Sarah from Serenity ECDEM Global Limited. How can I help you today?",
+  content: `Hi! I'm ${REP.name} from Serenity ECDEM Global Limited. How can I help you today?`,
 };
 
 // Support hours: Mon–Sat, 08:00–20:00 (local browser time)
@@ -167,8 +180,8 @@ const ChatWidget = () => {
           className="fixed bottom-[5.5rem] right-5 z-50 max-w-[260px] bg-background border border-border shadow-lg rounded-2xl rounded-br-sm p-3 flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 hover:shadow-xl transition-shadow"
         >
           <img
-            src={sarahAvatar}
-            alt="Sarah, customer support representative"
+            src={REP.avatar}
+            alt={`${REP.name}, customer support representative`}
             width={36}
             height={36}
             loading="lazy"
@@ -221,8 +234,8 @@ const ChatWidget = () => {
           <div className="flex items-center gap-3 p-4 bg-primary text-primary-foreground">
             <div className="relative">
               <img
-                src={sarahAvatar}
-                alt="Sarah, customer support representative"
+                src={REP.avatar}
+                alt={`${REP.name}, customer support representative`}
                 width={40}
                 height={40}
                 loading="lazy"
@@ -236,7 +249,7 @@ const ChatWidget = () => {
               />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-semibold leading-tight">Sarah · Support</p>
+              <p className="font-semibold leading-tight">{REP.name} · Support</p>
               <p className="text-xs opacity-90 flex items-center gap-1.5">
                 <span
                   className={cn(
