@@ -50,6 +50,15 @@ const ChatWidget = () => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, open]);
 
+  useEffect(() => {
+    if (open) {
+      setShowPrompt(false);
+      return;
+    }
+    const id = setTimeout(() => setShowPrompt(true), 2000);
+    return () => clearTimeout(id);
+  }, [open]);
+
   const waLink = (text?: string) =>
     `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text || "Hi, I have a question about your nursing recruitment services.")}`;
 
