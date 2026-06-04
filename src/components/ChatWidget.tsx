@@ -189,7 +189,7 @@ const ChatWidget = () => {
           />
           <div className="text-left">
             <p className="text-sm font-medium text-foreground leading-snug">
-              Hi there! Have a question?
+              Hi there! I'm {REP.name}. Have a question?
             </p>
             <p className="text-xs text-muted-foreground">Chat with us here</p>
           </div>
