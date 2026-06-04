@@ -1,0 +1,2 @@
+ALTER POLICY "Anyone can submit applications" ON public.applications WITH CHECK (status = 'pending');
+ALTER TABLE public.applications ADD CONSTRAINT applications_status_check CHECK (status IN ('pending','approved','rejected'));
