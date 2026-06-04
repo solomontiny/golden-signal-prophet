@@ -11,7 +11,7 @@ import { useAdminAuth } from "@/hooks/useAdminAuth";
 const AdminLogin = () => {
   const navigate = useNavigate();
   const { isAdmin, loading: authLoading } = useAdminAuth();
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const mode = "signin" as const;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,27 +30,17 @@ const AdminLogin = () => {
     }
     setLoading(true);
     try {
-      if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: { emailRedirectTo: `${window.location.origin}/admin` },
-        });
-        if (error) throw error;
-        toast.success("Account created. Check your email to confirm, then sign in.");
-        setMode("signin");
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
-        toast.success("Welcome back, admin.");
-        navigate("/admin", { replace: true });
-      }
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      toast.success("Welcome back, admin.");
+      navigate("/admin", { replace: true });
     } catch (err: any) {
       toast.error(err?.message || "Authentication failed.");
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <div className="min-h-screen grid place-items-center bg-gradient-to-br from-background to-secondary/40 px-4 py-12">
@@ -59,7 +49,7 @@ const AdminLogin = () => {
           <Lock className="h-5 w-5" />
           <span className="text-xs uppercase tracking-widest font-semibold">Admin Area</span>
         </div>
-        <h1 className="font-serif text-2xl font-bold">{mode === "signin" ? "Admin Sign In" : "Create Admin Account"}</h1>
+        <h1 className="font-serif text-2xl font-bold">Admin Sign In</h1>
         <p className="text-sm text-muted-foreground mt-1">Restricted to authorized personnel only.</p>
 
         <form onSubmit={onSubmit} className="mt-6 space-y-4">
@@ -72,17 +62,10 @@ const AdminLogin = () => {
             <Input id="admin-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={8} className="mt-1.5" />
           </div>
           <Button type="submit" disabled={loading} className="w-full bg-hero text-primary-foreground">
-            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : mode === "signin" ? "Sign In" : "Create Account"}
+            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Sign In"}
           </Button>
         </form>
 
-        <button
-          type="button"
-          onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-          className="mt-4 text-xs text-muted-foreground hover:text-primary w-full text-center"
-        >
-          {mode === "signin" ? "First time? Create the admin account" : "Have an account? Sign in"}
-        </button>
       </div>
     </div>
   );

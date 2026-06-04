@@ -100,6 +100,10 @@ const AdminDashboard = () => {
   };
 
   const exportCsv = () => {
+    const safeCsv = (v: unknown) => {
+      const s = String(v ?? "");
+      return /^[=+\-@\t\r]/.test(s) ? `'${s}` : s;
+    };
     const headers = ["Created","First","Last","Email","Phone","Nationality","Preferred","Specialty","Experience","Licenses","Status","Message"];
     const rows = filtered.map((a) => [
       new Date(a.created_at).toISOString(),
@@ -109,8 +113,9 @@ const AdminDashboard = () => {
       a.status, (a.message || "").replace(/\n/g, " "),
     ]);
     const csv = [headers, ...rows]
-      .map((r) => r.map((v) => `"${String(v).replace(/"/g, '""')}"`).join(","))
+      .map((r) => r.map((v) => `"${safeCsv(v).replace(/"/g, '""')}"`).join(","))
       .join("\n");
+
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
