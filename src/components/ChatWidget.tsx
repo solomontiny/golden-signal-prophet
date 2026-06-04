@@ -38,6 +38,7 @@ const ChatWidget = () => {
   const [ticketSubmitting, setTicketSubmitting] = useState(false);
   const [ticketSent, setTicketSent] = useState(false);
   const [chatDark, setChatDark] = useState(false);
+  const [showPrompt, setShowPrompt] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,6 +49,15 @@ const ChatWidget = () => {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [messages, open]);
+
+  useEffect(() => {
+    if (open) {
+      setShowPrompt(false);
+      return;
+    }
+    const id = setTimeout(() => setShowPrompt(true), 2000);
+    return () => clearTimeout(id);
+  }, [open]);
 
   const waLink = (text?: string) =>
     `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text || "Hi, I have a question about your nursing recruitment services.")}`;
@@ -150,6 +160,39 @@ const ChatWidget = () => {
 
   return (
     <>
+      {/* Prompt bubble */}
+      {!open && showPrompt && (
+        <button
+          onClick={() => setOpen(true)}
+          className="fixed bottom-[5.5rem] right-5 z-50 max-w-[260px] bg-background border border-border shadow-lg rounded-2xl rounded-br-sm p-3 flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 hover:shadow-xl transition-shadow"
+        >
+          <img
+            src={sarahAvatar}
+            alt="Sarah, customer support representative"
+            width={36}
+            height={36}
+            loading="lazy"
+            className="h-9 w-9 rounded-full object-cover ring-2 ring-primary/20 flex-shrink-0"
+          />
+          <div className="text-left">
+            <p className="text-sm font-medium text-foreground leading-snug">
+              Hi there! Have a question?
+            </p>
+            <p className="text-xs text-muted-foreground">Chat with us here</p>
+          </div>
+          <span
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowPrompt(false);
+            }}
+            className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-muted border border-border flex items-center justify-center cursor-pointer hover:bg-accent"
+            aria-label="Dismiss prompt"
+          >
+            <X className="h-3 w-3 text-muted-foreground" />
+          </span>
+        </button>
+      )}
+
       {/* Launcher */}
       <button
         onClick={() => setOpen((v) => !v)}
