@@ -278,7 +278,7 @@ const ChatWidget = () => {
                   <div
                     key={i}
                     className={cn(
-                      "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm whitespace-pre-wrap break-words",
+                      "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm whitespace-pre-wrap break-words dark:text-white",
                       m.role === "user"
                         ? "ml-auto bg-primary text-primary-foreground rounded-br-sm"
                         : "bg-background border border-border rounded-bl-sm",
@@ -288,7 +288,7 @@ const ChatWidget = () => {
                   </div>
                 ))}
                 {loading && messages[messages.length - 1]?.role === "user" && (
-                  <div className="bg-background border border-border rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm w-fit">
+                  <div className="bg-background border border-border rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm w-fit dark:text-white">
                     <Loader2 className="h-4 w-4 animate-spin" />
                   </div>
                 )}
@@ -318,7 +318,7 @@ const ChatWidget = () => {
                     }}
                     placeholder="Type your message…"
                     disabled={loading}
-                    className="flex-1"
+                    className="flex-1 dark:text-white dark:placeholder:text-white/60"
                   />
                   <Button onClick={send} disabled={loading || !input.trim()} size="icon" aria-label="Send">
                     <Send className="h-4 w-4" />
@@ -339,8 +339,8 @@ const ChatWidget = () => {
               {ticketSent ? (
                 <div className="h-full flex flex-col items-center justify-center text-center gap-3 py-8">
                   <CheckCircle2 className="h-12 w-12 text-green-600" />
-                  <h3 className="font-semibold text-base">Ticket received</h3>
-                  <p className="text-sm text-muted-foreground max-w-[260px]">
+                  <h3 className="font-semibold text-base dark:text-white">Ticket received</h3>
+                  <p className="text-sm text-muted-foreground max-w-[260px] dark:text-white/80">
                     Thanks! Our team will reply to your email within one business day.
                   </p>
                   <a
