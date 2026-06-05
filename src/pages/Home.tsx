@@ -7,7 +7,7 @@ import visaImg from "@/assets/hero-nurse.jpg"; // passport/visa flatlay
 import trainingImg from "@/assets/nurses-team.jpg"; // classroom
 
 const services = [
-  { icon: Stethoscope, title: "Nursing Recruitment", desc: "Matching qualified nurses with top hospitals and clinics across the GCC." },
+  { icon: Stethoscope, title: "Nursing Recruitment", desc: "Matching qualified nurses with top hospitals and clinics across the GCC and Nigeria." },
   { icon: Plane, title: "Visa Services", desc: "End-to-end visa processing and relocation support for you and your family." },
   { icon: FileCheck2, title: "Documentation", desc: "Credentialing, licensure, Prometric & DataFlow — we handle the paperwork." },
   { icon: GraduationCap, title: "Training Services", desc: "Exam prep, language coaching, and continuing education for nurses." },
@@ -17,7 +17,7 @@ const stats = [
   { n: "3+", l: "Years in the GCC" },
   { n: "1,200+", l: "Nurses Placed" },
   { n: "60+", l: "Partner Hospitals" },
-  { n: "6", l: "GCC Countries" },
+  { n: "7", l: "Countries Served" },
 ];
 
 const Home = () => {
@@ -33,10 +33,10 @@ const Home = () => {
               <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Licensed Recruitment Agency · Qatar
             </span>
             <h1 className="mt-4 sm:mt-5 font-serif font-bold leading-[1.05] tracking-tight">
-              Your trusted bridge to a <span className="text-gradient">nursing career in the GCC</span>
+              Your trusted bridge to a <span className="text-gradient">nursing career in the GCC and Nigeria</span>
             </h1>
             <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
-              We recruit qualified nurses for hospitals across Qatar, UAE, Saudi Arabia, Kuwait, Bahrain and Oman — and provide training, documentation and visa support every step of the way.
+              We recruit qualified nurses for hospitals across Qatar, UAE, Saudi Arabia, Kuwait, Bahrain, Oman and Nigeria — and provide training, documentation and visa support every step of the way.
             </p>
             <div className="mt-7 sm:mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
               <Button asChild size="lg" className="bg-hero text-primary-foreground shadow-glow hover:opacity-90 rounded-full w-full sm:w-auto h-12">
@@ -69,7 +69,7 @@ const Home = () => {
               </div>
               <div>
                 <div className="text-xs sm:text-sm font-semibold">1,200+ placements</div>
-                <div className="text-[10px] sm:text-xs text-muted-foreground">Across the GCC</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground">Across the GCC and Nigeria</div>
               </div>
             </div>
           </div>
