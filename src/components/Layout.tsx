@@ -77,7 +77,11 @@ const Layout = () => {
             <img src={logo} alt="Serenity ECDEM Global Limited logo" className="w-9 h-9 md:w-11 md:h-11 rounded-xl object-cover shadow-glow group-hover:scale-105 transition-transform bg-white shrink-0" />
             <div className="leading-tight min-w-0">
               <div className="font-serif text-sm md:text-lg font-bold tracking-tight truncate">Serenity ECDEM Global Limited</div>
-              <div className="hidden sm:block text-[9px] md:text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Nursing Recruitment</div>
+              <div className="hidden sm:flex items-center gap-1 text-[9px] md:text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                <span>Nursing Recruitment</span>
+                <span className="hidden md:inline text-primary font-semibold">· RC: 9578172</span>
+              </div>
+              <div className="sm:hidden text-[9px] uppercase tracking-[0.18em] text-muted-foreground">RC: 9578172</div>
             </div>
           </Link>
 
