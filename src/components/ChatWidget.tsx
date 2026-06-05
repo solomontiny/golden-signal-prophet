@@ -370,7 +370,8 @@ const ChatWidget = () => {
                     const { error } = await supabase.from("support_tickets").insert({ name, email, subject, message });
                     setTicketSubmitting(false);
                     if (error) {
-                      toast({ title: "Couldn't send ticket", description: error.message, variant: "destructive" });
+                      console.error(error);
+                      toast({ title: "Couldn't send ticket", description: "Something went wrong. Please try again or contact us via WhatsApp.", variant: "destructive" });
                       return;
                     }
                     setTicketSent(true);
