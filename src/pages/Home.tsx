@@ -30,7 +30,7 @@ const Home = () => {
         <div className="container relative grid lg:grid-cols-2 gap-8 lg:gap-16 py-10 sm:py-14 lg:py-24 items-center">
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-secondary-foreground text-[11px] sm:text-xs font-medium shadow-soft">
-              <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Licensed Recruitment Agency · Qatar · RC: 9578172
+              <ShieldCheck className="h-3.5 w-3.5 text-primary" /> Licensed Recruitment Agency · Qatar
             </span>
             <h1 className="mt-4 sm:mt-5 font-serif font-bold leading-[1.05] tracking-tight">
               Your trusted bridge to a <span className="text-gradient">nursing career in the GCC</span>
