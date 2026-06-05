@@ -96,7 +96,7 @@ const Apply = () => {
       toast.success("Application submitted! We'll be in touch within 48 hours.");
     } catch (err: any) {
       console.error(err);
-      toast.error(err?.message || "Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again or contact us via WhatsApp.");
     } finally {
       setLoading(false);
     }
