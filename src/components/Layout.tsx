@@ -13,7 +13,8 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
+import logoAsset from "@/assets/logo.png.asset.json";
+const logo = logoAsset.url;
 import ChatWidget from "@/components/ChatWidget";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import UrgentBar from "@/components/UrgentBar";
